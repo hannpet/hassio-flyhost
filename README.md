@@ -7,3 +7,5 @@
 ### HomeAssistant via a frp-Tunnel on fly.io
 
 ##### fly.io-App & HomeAssistant-Addon
+
+Work in progress, not finished!
