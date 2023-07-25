@@ -14,6 +14,8 @@ COPY run.sh .
 RUN if [ ${BUILD_ARCH} = "aarch64" ]; then ARCH="arm64"; fi
 RUN if [ ${BUILD_ARCH} = "amd64" ]; then ARCH="amd64"; fi
 
+RUN echo "https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz"
+
 #update and install deps
 RUN apk update && apk add --no-cache openssl wget
 
