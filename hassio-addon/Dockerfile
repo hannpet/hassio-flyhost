@@ -11,8 +11,8 @@ WORKDIR /app
 COPY run.sh .
 
 #frp has other arch-endings
-RUN [ ${BUILD_ARCH} = aarch ] && ARCH=arm64
-RUN [ ${BUILD_ARCH} = amd64 ] && ARCH=amd64
+RUN if [[ ${BUILD_ARCH} = aarch ]] ; then ARCH=arm64
+RUN if [[ ${BUILD_ARCH} = amd64 ]] ; then ARCH=amd64
 
 #update and install deps
 RUN apk update && apk add --no-cache openssl wget
