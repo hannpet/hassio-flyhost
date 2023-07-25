@@ -4,6 +4,6 @@
 <img/ src="hassio-addon/logo.png" width="100">
 
 # hassio-flyhost
-### HomeAssistant accessible via a frp-Tunnel on fly.io
+### HomeAssistant via a frp-Tunnel on fly.io
 
-#### A fly.io-App and companion HomeAssistant-Addon
+##### fly.io-App & HomeAssistant-Addon
