@@ -1,15 +1,14 @@
-name: frp
+name: frpc-tunnel
 description: Tunnel Home Assistant to WAN (if you're behind a CG-nat or Firewall)
-version: 1.0.6
-url: https://github.com/hannpet/addon-frpc
+version: 1.0.7
+url: https://github.com/hannpet/hassio-flyhost/hassio-addon
 startup: application
 boot: auto
 host_network: true
-slug: frp
+slug: frpc-tunnel
 init: false
 arch:
   - aarch64
-  - amd64
 map:
   - config:rw
   - ssl:rw

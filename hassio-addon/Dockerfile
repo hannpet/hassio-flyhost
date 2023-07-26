@@ -4,28 +4,21 @@ ARG BUILD_ARCH
 FROM $BUILD_FROM
 
 ENV FRP_VERSION 0.51.1
+ENV FRP_ARCH "arm64"
 ENV LANG C.UTF-8
 
 
 WORKDIR /app
 COPY run.sh .
 
-#frp has other arch-endings
-RUN if [ ${BUILD_ARCH} = "aarch64" ]; then ARCH="arm64"; fi
-RUN if [ ${BUILD_ARCH} = "amd64" ]; then ARCH="amd64"; fi
-
-RUN echo "BUILDARCH: ${BUILD_ARCH}"
-RUN echo "BUILDROM: ${BUILD_FROM}"
-RUN echo "https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz"
-
 #update and install deps
 RUN apk update && apk add --no-cache openssl wget
 
 #download frp
-RUN wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${ARCH}.tar.gz
+RUN wget https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz
 
 #extract frpc-binary
-RUN tar -zxf frp_${FRP_VERSION}_linux_${ARCH}.tar.gz frp_${FRP_VERSION}_linux_${ARCH}/frpc
+RUN tar -zxf frp_${FRP_VERSION}_linux_${FRP_ARCH}.tar.gz frp_${FRP_VERSION}_linux_${FRP_ARCH}/frpc
 
 #make symlink and delete archive
 RUN rm *.tar.gz && ln -s $(ls frp_*/* -r) frpc
