@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV VERSION 0.51.1
+ENV VERSION 0.51.2
 
 WORKDIR /app
 COPY frps.ini .

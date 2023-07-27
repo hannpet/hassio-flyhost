@@ -8,4 +8,4 @@
 
 ##### fly.io-App & HomeAssistant-Addon
 
-Work in progress, not finished!
+Unfinished, for now it builds only for arm64(Addon) and amd64(flyApp).

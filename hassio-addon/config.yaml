@@ -1,6 +1,6 @@
 name: frpc-tunnel
 description: Tunnel Home Assistant to WAN (if you're behind a CG-nat or Firewall)
-version: 1.0.7
+version: 1.0.8
 url: https://github.com/hannpet/hassio-flyhost/hassio-addon
 startup: application
 boot: auto
